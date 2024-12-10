@@ -8,10 +8,10 @@ This is a [pytorch](http://pytorch.org/) implementation of [ChangeDiff](https://
 
 ## :speech_balloon:  Multi-temporal semantic change synthetic data
 It is trained on the sparsely labeled semantic change detection SECOND (Yang et al. 2021) dataset.
-![](./images/intro.jpg)
+![](./images/fig1.pdf)
 
 ## :speech_balloon: ChangeDiff Pipeline
-![](./images/Pipeline.jpg)
+![](./images/pipeline.pdf)
 
 
 
