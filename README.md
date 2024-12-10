@@ -6,11 +6,11 @@ This is a [pytorch](http://pytorch.org/) implementation of [ChangeDiff](https://
 (AAAI-2025 paper)
 
 
-## :speech_balloon:  Multi-temporal semantic change synthetic data synthesized by our ChangeDiff
+## :speech_balloon:  Multi-temporal semantic change synthetic data
 It is trained on the sparsely labeled semantic change detection SECOND (Yang et al. 2021) dataset.
 ![](./images/intro.jpg)
 
-## :speech_balloon: Pipeline
+## :speech_balloon: ChangeDiff Pipeline
 ![](./images/Pipeline.jpg)
 
 
