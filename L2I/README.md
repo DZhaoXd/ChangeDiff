@@ -17,7 +17,7 @@ wget -O models/ldm/stable-diffusion/sd-v1-4-full-ema.ckpt https://huggingface.co
 
 Dataset preparation : Store the dataset path in json file.
 
-**SECOND** dataset can be downloaded [here](https://captain-whu.github.io/SCD/) and put it under [](./data)
+**SECOND** dataset can be downloaded [here](https://captain-whu.github.io/SCD/) and put it under ./data
 
 Example of json files is in [here](./data/SECOND_train_0.8.json).
 
