@@ -1,4 +1,4 @@
-## 💻 Environment Setup
+## Environment Setup
 
 Please follow the below steps:
 
@@ -9,7 +9,7 @@ conda install pytorch==1.13.1 torchvision==0.14.1 torchaudio==0.13.1 pytorch-cud
 pip install -r requirements.txt
 ```
 
-## 🛠�?Dataset Setup
+## Dataset Setup
 
 If you want to use your own data, please refer to [preprocess_data](preprocess_data/readme.md) for details.
 
@@ -52,7 +52,7 @@ train/data/
             ...
         ...
 ```
-## 📈 Training 
+## Training 
 To run T2L, use the following command:
 
 ```bash
@@ -62,7 +62,7 @@ bash run.sh
 
 The results will be saved under `train/results` directory.
 
-## 📈 Sample layout from text 
+## Sample layout from text 
 To sample continuous layouts using T2L, use the following command:
 
 ```bash
@@ -73,15 +73,15 @@ bash run_rs.sh
 The results will be saved under `train/results` directory.
 
 
-## 🏷�?License
+## License
 
 This repository is released under the [Apache 2.0](LICENSE) license. 
 
-## 🙏 Acknowledgement
+## Acknowledgement
 
 This code is built on [diffusers](https://github.com/huggingface/diffusers), [prompt-to-prompt](https://github.com/google/prompt-to-prompt), [VISOR](https://github.com/microsoft/VISOR), and [CLIP](https://github.com/openai/CLIP). We thank all these nicely open sourced code.
 
-## 📝 Citation
+## ðŸ“ Citation
 
 If you find our work useful, please consider citing:
 ```bibtex
