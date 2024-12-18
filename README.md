@@ -13,5 +13,6 @@ It is trained on the sparsely labeled semantic change detection SECOND (Yang et 
 ## :speech_balloon: ChangeDiff Pipeline
 ![](./images/pipeline.jpg)
 
-
+## :speech_balloon: ChangeDiff Training, sampling.
+Please find the corresponding training, sampling and testing scripts under the corresponding files.
 
