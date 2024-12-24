@@ -2,8 +2,8 @@
 (AAAI-2025) ChangeDiff: A Multi-Temporal Change Detection Data Generator with Flexible Text Prompts via Diffusion Model
 
 
-This is a [pytorch](http://pytorch.org/) implementation of [ChangeDiff](https://github.com/DZhaoXd/ChangeDiff).
-(AAAI-2025 paper)
+This is a [pytorch](http://pytorch.org/) implementation of our paper [ChangeDiff](https://arxiv.org/pdf/2412.15541).
+(AAAI-2025)
 
 
 ## :speech_balloon:  Multi-temporal semantic change synthetic data
