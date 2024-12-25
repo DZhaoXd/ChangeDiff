@@ -94,12 +94,7 @@ The results will be saved under `train/results` directory.
 
 
 ## License
-
 This repository is released under the [Apache 2.0](LICENSE) license. 
-
-## Acknowledgement
-
-This code is built on [diffusers](https://github.com/huggingface/diffusers), [prompt-to-prompt](https://github.com/google/prompt-to-prompt), [VISOR](https://github.com/microsoft/VISOR), and [CLIP](https://github.com/openai/CLIP). We thank all these nicely open sourced code.
 
 
 ### Acknowledge
