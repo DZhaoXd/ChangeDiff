@@ -103,7 +103,7 @@ This code is built on [diffusers](https://github.com/huggingface/diffusers), [pr
 
 
 ### Acknowledge
-Some codes are adapted from [FreestyleNet](https://github.com/essunny310/FreestyleNet),  [TokenCompose](https://github.com/mlpc-ucsd/TokenCompose) and [SCanNet](https://github.com/ggsDing/SCanNet). We thank them for their excellent projects.
+Some codes are adapted from [FreestyleNet](https://github.com/essunny310/FreestyleNet),  [TokenCompose](https://github.com/mlpc-ucsd/TokenCompose) and [A2Net](https://github.com/guanyuezhen/A2Net). We thank them for their excellent projects.
 
 
 ### Citation
