@@ -9,6 +9,8 @@ This is a [pytorch](http://pytorch.org/) implementation of our paper [ChangeDiff
 ## :speech_balloon:  Multi-temporal semantic change synthetic data
 It is trained on the sparsely labeled semantic change detection SECOND (Yang et al. 2021) dataset.
 ![](./images/fig1.jpg)
+More sampled synthetic images are available:
+![](./images/images2.jpg)
 
 ## :speech_balloon: ChangeDiff Pipeline
 ![](./images/pipeline.jpg)
