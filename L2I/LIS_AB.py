@@ -252,13 +252,8 @@ def load_model_from_config(config, ckpt, verbose=False):
     print(f"Loading model from {ckpt}")
     pl_sd = torch.load(ckpt, map_location="cpu")
     sd = pl_sd["state_dict"]
-    # 实例化 LatentDiffusion model
     model = instantiate_from_config(config.model)
-    # 为 model 加载权重sd
-    # m是一个列表，包含在加载状态字典时模型中缺失的键（参数）。
-    # u是一个列表，包含加载状态字典时模型中未预期到的额外键（参数）。理想情况下，两者都是空的。
     m, u = model.load_state_dict(sd, strict=False)
-    # “verbose” 参数通常是一个布尔值或整数，用来控制程序在执行时是否输出详细信息，以及输出信息的程度。
     if len(m) > 0 and verbose:
         print("missing keys:")
         print(m)
@@ -397,14 +392,9 @@ def main():
     seed_everything(opt.seed)  # 设置随机种子seed
     config = OmegaConf.load(f"{opt.config}")
     model = load_model_from_config(config, f"{opt.ckpt}")
-    # 初始化模型并传入config中的参数，等效于下列代码
-    # from ldm.models.diffusion.ddpm import LatentDiffusion
-    # model = LatentDiffusion(**config.model.get("params", dict()))
-    # model.load_state_dict(torch.load(ckpt, map_location="cpu")["state_dict"], strict=False)
 
     device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
     model = model.to(device)
-    # 加载Stable Diffusion模型
 
     if opt.plms:
         sampler = PLMSSampler(model)
@@ -497,7 +487,6 @@ def main():
     # start_code = None
     # if opt.fixed_code:
     #     start_code = torch.randn([opt.batch_size, opt.C, opt.H // opt.f, opt.W // opt.f], device=device)
-        # torch.randn函数是PyTorch中用于生成具有正态分布（均值为0，标准差为1）的随机数的函数。
 
     def add_gaussian_noise_local_adaptive(image, block_size=32):
         noisy_image = image.clone()
@@ -521,9 +510,7 @@ def main():
         return noisy_image
 
 
-    # 设置推理的精度
     precision_scope = autocast if opt.precision == "autocast" else nullcontext
-    # 关闭梯度
     with torch.no_grad():
         with precision_scope("cuda"):
             with model.ema_scope():
@@ -562,9 +549,7 @@ def main():
                                                      x_T=start_code)
 
                     x_samples_ddim = model.decode_first_stage(samples_ddim)
-                    # decode_first_stage(VAE的decoder)
                     x_samples_ddim = torch.clamp((x_samples_ddim + 1.0) / 2.0, min=0.0, max=1.0)
-                    # 对生成的图像数据进行归一化处理，将图像数据中的像素值限制在[0, 1]的范围内
 
                     for i in range(len(x_samples_ddim)):  # 保存A图片
                         x_sample = x_samples_ddim[i]

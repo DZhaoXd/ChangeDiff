@@ -34,6 +34,18 @@ CUDA_VISIBLE_DEVICES=0 python main.py --base ./configs/stable-diffusion/v1-finet
     --no-test \
     --json_file ./data/SECOND_train_0.8.json
 ```
+If you want to train with a custom dataset
+1. Generate a [json file](./data/SECOND_train_0.8.json) for the custom dataset with its path information.
+2. You can modify the [dataloader file](./ldm/data/SECOND.py)
+
+    Modify the dataset information such as label_mapping, label_palette, data_dict and dataset path information in the dataloader file.
+3. Modify the configuration file
+
+    Modify data.train.target and data.validation.target in the [configuration file](./configs/stable-diffusion/v1-finetune_SECOND.yaml) to the contents of the dataloader.
+4. Replace the path of the json file and the modified configuration file into the runtime parameters.
+
+Then, you can use the customized dataset for training
+
 
 ## Generation
 
@@ -52,6 +64,16 @@ CUDA_VISIBLE_DEVICES=0 python LIS_AB.py --batch_size 8 \
 ```
 
 We provide the trained SECOND dataset weights [here](https://drive.google.com/file/d/1m0j4ej6ELfDyHSOAupRX8NYKkMJvvURM/view?usp=drive_link).
+
+If you want to generate images using weights trained on a custom dataset
+1. Modify the dataset parameter in the run parameter to the name of the customized dataset
+2. Add the information of the customized dataset in the [inference file](./LIS_AB.py)
+
+    Like `elif opt.dataset == "ADE20K"` and the code that follows it.
+3. Modify the runtime parameters in the inference script such as ckpt, outdir, and txt_file.
+
+Then you can get the results of the custom dataset generation
+
 
 ## Acknowledgments
 Our code borrows heavily from [FreestyleNet](https://github.com/essunny310/FreestyleNet)
