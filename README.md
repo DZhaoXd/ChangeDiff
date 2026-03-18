@@ -33,7 +33,7 @@ pip install -r requirements.txt
 
 ## Dataset Setup
 
-If you want to use your own data, please refer to [preprocess_data](preprocess_data/readme.md) for details.
+If you want to use your own data, please refer to [preprocess_data](https://github.com/DZhaoXd/ChangeDiff/tree/main/T2L) for details.
 
 ### 1. Setup the Second Data dataset
 
